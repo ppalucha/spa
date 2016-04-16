@@ -1,6 +1,6 @@
 {
   "name": "spa",
-  "version": "0.1",
+  "version": "0.1.0",
   "description": "Super/Smart/Statistical Performance Analyzer",
   "main": "server.js",
   "dependencies": {
