@@ -37,5 +37,9 @@
   },
   "author": "Pawel Palucha",
   "license": "MIT",
-  "readme": "README.md"
+  "readme": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ppalucha/spa.git"
+  }
 }
