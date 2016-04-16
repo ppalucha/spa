@@ -39,6 +39,7 @@ function databases(db, ds_id, callback) {
         $match: { 
           "dimensions.name" : "DB Name",
           ds: mongodb.ObjectId(ds_id),
+          category: "Sessions",
         } 
       },  
       { 
