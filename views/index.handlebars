@@ -1,0 +1,39 @@
+<!-- vim: set ft=html ts=2 sw=2 expandtab : -->
+<div class="jumbotron">
+  <h1>SPA Performance Analyzer</h1>
+  <p>Presents charts for data from multiple detailed AWR files.</p>
+
+  <div class="btn-group">
+    <a class="btn btn-danger btn-lg" href="/list-awr" role=button>AWR <span>&nbsp;</span><span class="badge" id=awr-cnt>&nbsp;</span></a>
+    <button type=button class="btn btn-danger dropdown-toggle btn-lg" data-toggle=dropdown aria-haspopup=true aria-expanded=false>
+      <span class="caret"></span>
+      <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="/upload-awr">Upload New</a></li>
+    </ul>
+  </div>
+
+  <div class="btn-group">
+    <a class="btn btn-danger btn-lg" href="/list-ds" role=button>Data Set <span>&nbsp;</span><span class="badge" id=ds-cnt>&nbsp;</span></a>
+    <button type=button class="btn btn-danger dropdown-toggle btn-lg" data-toggle=dropdown aria-haspopup=true aria-expanded=false>
+      <span class="caret"></span>
+      <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="/new-ds">Create New</a></li>
+    </ul>
+  </div>
+
+  <p>
+    <ul>
+      <li><p><span class="fa fa-upload"></span> Upload AWR files</p></li>
+      <li><p><span class="fa fa-file"></span> Create a Data Set to store related files and charts</p></li>
+      <li><p><span class="fa fa-gear"></span> Recalculate Data Set to analyze AWR files</p></li>
+      <li><p><span class="fa fa-area-chart"></span> View charts for hosts, databases and SQL statistics</p></li>
+    </ul>
+  </p>
+  <p><a class="btn btn-primary btn-lg" href="/help#getting-started" role=button>Learn more</a></p>
+</div>
+
+<script src="/public/js/index-cnt.js"></script>

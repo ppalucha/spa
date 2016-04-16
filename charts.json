@@ -1,0 +1,38 @@
+{ "_id" : { "$oid" : "5703c4bb2629a97c26041ef2" }, "name" : "Foreground Wait Classes", "category" : "Foreground Wait Class", "c3" : { "axis" : { "y" : { "label" : "(s)" } } } }
+{ "_id" : { "$oid" : "57065cf3f7ca8a8a7e16172f" }, "name" : "Foreground Wait Events", "limit" : 15, "category" : "Foreground Wait Event", "skip" : [ "SQL*Net message from client" ], "c3" : { "axis" : { "y" : { "label" : "(s)" } } } }
+{ "_id" : { "$oid" : "57068199f7ca8a8a7e161730" }, "name" : "Background Wait Events", "limit" : 15, "category" : "Background Wait Event", "c3" : { "axis" : { "y" : { "label" : "(s)" } } } }
+{ "_id" : { "$oid" : "57068378f7ca8a8a7e161731" }, "name" : "Services - DB Time", "limit" : 15, "category" : "Services - DB Time", "c3" : { "axis" : { "y" : { "label" : "(s)" } } } }
+{ "_id" : { "$oid" : "570683d5f7ca8a8a7e161732" }, "name" : "Services - DB CPU", "limit" : 15, "category" : "Services - DB CPU", "c3" : { "axis" : { "y" : { "label" : "(s)" } } } }
+{ "_id" : { "$oid" : "570683faf7ca8a8a7e161733" }, "name" : "Services - Physical Reads", "limit" : 15, "category" : "Services - Physical Reads", "c3" : { "axis" : { "y" : { "label" : "(KB)" } } } }
+{ "_id" : { "$oid" : "57068428f7ca8a8a7e161734" }, "name" : "Services - Logical Reads", "limit" : 15, "category" : "Services - Logical Reads", "c3" : { "axis" : { "y" : { "label" : "(KB)" } } } }
+{ "_id" : { "$oid" : "57077f13f7ca8a8a7e161735" }, "name" : "Segments - Logical Reads", "limit" : 15, "category" : "Segments by Logical Reads" }
+{ "_id" : { "$oid" : "570787a0f103fd345e005773" }, "limit" : 15, "category" : "Segments by Physical Reads", "name" : "Segments - Physical Reads" }
+{ "_id" : { "$oid" : "570787d7f103fd345e005774" }, "limit" : 15, "category" : "Segments by Physical Read Requests", "name" : "Segments - Physical Read Requests" }
+{ "_id" : { "$oid" : "570787eef103fd345e005775" }, "limit" : 15, "category" : "Segments by Unoptimized Reads", "name" : "Segments - Unoptimized Reads" }
+{ "_id" : { "$oid" : "57078804f103fd345e005776" }, "limit" : 15, "category" : "Segments by Direct Physical Reads", "name" : "Segments - Direct Physical Reads" }
+{ "_id" : { "$oid" : "57078816f103fd345e005777" }, "limit" : 15, "category" : "Segments by Physical Writes", "name" : "Segments - Physical Writes" }
+{ "_id" : { "$oid" : "57078826f103fd345e005778" }, "limit" : 15, "category" : "Segments by Physical Write Requests", "name" : "Segments - Physical Write Requests" }
+{ "_id" : { "$oid" : "57078834f103fd345e005779" }, "limit" : 15, "category" : "Segments by Direct Physical Writes", "name" : "Segments - Direct Physical Writes" }
+{ "_id" : { "$oid" : "57078845f103fd345e00577a" }, "limit" : 15, "category" : "Segments by Table Scans", "name" : "Segments - Table Scans" }
+{ "_id" : { "$oid" : "57078856f103fd345e00577b" }, "limit" : 15, "category" : "Segments by DB Block Changes", "name" : "Segments - DB Block Changes" }
+{ "_id" : { "$oid" : "57078869f103fd345e00577c" }, "limit" : 15, "category" : "Segments by Row Lock Waits", "name" : "Segments - Row Lock Waits" }
+{ "_id" : { "$oid" : "57078874f103fd345e00577d" }, "limit" : 15, "category" : "Segments by ITL Waits", "name" : "Segments - ITL Waits" }
+{ "_id" : { "$oid" : "5707889bf103fd345e00577e" }, "limit" : 15, "category" : "Segments by Buffer Busy Waits", "name" : "Segments - Buffer Busy Waits" }
+{ "_id" : { "$oid" : "5707be3ef103fd345e005781" }, "limit" : 15, "category" : "SQL by Elapsed Time", "name" : "SQL - Elapsed Time", "c3" : { "axis" : { "y" : { "label" : "(s)" } } }, "sql" : true }
+{ "_id" : { "$oid" : "5707bf62f7ca8a8a7e161736" }, "limit" : 15, "category" : "SQL by CPU Time", "name" : "SQL - CPU Time", "c3" : { "axis" : { "y" : { "label" : "(s)" } } }, "sql" : true }
+{ "_id" : { "$oid" : "5707c027f7ca8a8a7e161737" }, "limit" : 15, "category" : "SQL by User I/O Time", "name" : "SQL - User I/O Time", "c3" : { "axis" : { "y" : { "label" : "(s)" } } }, "sql" : true }
+{ "_id" : { "$oid" : "5707c2d6f7ca8a8a7e161738" }, "limit" : 15, "category" : "SQL by Buffer Gets", "name" : "SQL - Buffer Gets", "sql" : true }
+{ "_id" : { "$oid" : "5707c3b1f7ca8a8a7e161739" }, "limit" : 15, "category" : "SQL by Physical Reads", "name" : "SQL - Physical Reads", "sql" : true }
+{ "_id" : { "$oid" : "5707c492f7ca8a8a7e16173a" }, "limit" : 15, "category" : "SQL by Unoptimized Read Requests", "name" : "SQL - Unoptimized Read Requests", "sql" : true }
+{ "_id" : { "$oid" : "5707c5c6f7ca8a8a7e16173b" }, "limit" : 15, "category" : "SQL by Number of Executions", "name" : "SQL - Number of Executions", "sql" : true }
+{ "_id" : { "$oid" : "5707c66ff7ca8a8a7e16173c" }, "limit" : 15, "category" : "SQL by Number of Parse Calls", "name" : "SQL - Number of Parse Calls", "sql" : true }
+{ "_id" : { "$oid" : "5707c7cdf7ca8a8a7e16173d" }, "limit" : 15, "category" : "SQL by Amount of Shared Memory", "name" : "SQL - Shared Memory Used", "c3" : { "axis" : { "y" : { "label" : "(b)" } } }, "sql" : true }
+{ "_id" : { "$oid" : "5707c8e6f7ca8a8a7e16173e" }, "limit" : 15, "category" : "SQL by Version Counts", "name" : "SQL - Version Counts", "sql" : true, "type" : "step", "nogroup" : true }
+{ "_id" : { "$oid" : "570f42ddf7ca8a8a7e16173f" }, "limit" : 15, "category" : "Sessions", "name" : "Sessions" }
+{ "_id" : { "$oid" : "570f4310f7ca8a8a7e161740" }, "limit" : 15, "category" : "Cursors/Session", "name" : "Sessions - cursors/session" }
+{ "_id" : { "$oid" : "570f47b6f7ca8a8a7e161741" }, "limit" : 15, "category" : "Cache Sizes", "name" : "Cache Sizes", "c3" : { "axis" : { "y" : { "label" : "(MB)" } } } }
+{ "_id" : { "$oid" : "570f4b37f7ca8a8a7e161742" }, "limit" : 15, "category" : "Load Profile - DB Time", "name" : "Load Profile - DB Time", "c3" : { "axis" : { "y" : { "label" : "(s)" } } }, "type" : "step", "nogroup" : true }
+{ "_id" : { "$oid" : "570f4c9af7ca8a8a7e161743" }, "limit" : 15, "category" : "Load Profile - Redo Size", "name" : "Load Profile - Redo Size", "c3" : { "axis" : { "y" : { "label" : "(B)" } } } }
+{ "_id" : { "$oid" : "570f5110f7ca8a8a7e161744" }, "limit" : 15, "category" : "Load Profile - I/O", "name" : "Load Profile - I/O", "type" : "step", "nogroup" : true }
+{ "_id" : { "$oid" : "570f534cf7ca8a8a7e161745" }, "limit" : 15, "category" : "Load Profile - Activities", "name" : "Load Profile - Activities", "type" : "step", "nogroup" : true, "c3" : { "axis" : { "y" : { "min" : 0 } } } }
+{ "_id" : { "$oid" : "570f56d2f7ca8a8a7e161746" }, "limit" : 15, "category" : "Instance Efficiency", "name" : "Instance Efficiency", "type" : "step", "nogroup" : true, "c3" : { "axis" : { "y" : { "label" : "(%)", "min" : 0, "max" : 100 } } } }

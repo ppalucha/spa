@@ -1,0 +1,26 @@
+<!-- vim: set ft=html ts=2 sw=2 expandtab : -->
+<h2>Admin actions</h2>
+  <!--<p>Presents charts for data from multiple detailed AWR files.</p>-->
+<!--
+  <div class="btn-group">
+    <a class="btn btn-danger btn-lg" href="/list-awr" role=button>AWR <span>&nbsp;</span><span class="badge" id=awr-cnt>&nbsp;</span></a>
+    <button type=button class="btn btn-danger dropdown-toggle btn-lg" data-toggle=dropdown aria-haspopup=true aria-expanded=false>
+      <span class="caret"></span>
+      <span class="sr-only">Toggle Dropdown</span>
+    </button>
+    <ul class="dropdown-menu">
+      <li><a href="/upload-awr">Upload New</a></li>
+    </ul>
+  </div>
+-->
+
+
+<div class=form-group>
+  <button type=button class="btn btn-danger" id=reparse-awr-btn data-parse-text="Parsing, please wait..." autocomplete=off>
+    Reparse AWR files
+  </button>
+  <label for=reparse-awr-btn">Trigger reparsing of all loaded AWR files. Useful after parsing code changes.</label>
+</div>
+
+<script src="/public/js/admin.js"></script>
+

@@ -1,0 +1,50 @@
+/* vim: set ts=2 : */
+var chart;
+
+$(function(){
+	$.ajax({
+		url: '/fuelPrices',
+		type: 'GET',
+		success: function(data) {
+			chart = c3.generate({
+				bindto: "#chart",
+				data: {
+					columns: data['dataset'].map(function(val) {
+						return [val['seriesname'],].concat(
+								val['data'].map(function(val) {
+									return val['value'];
+								}));
+					}),
+					type: 'area-step',
+					groups: [
+									data['dataset'].map(function(val) {
+													return val['seriesname'];
+									}),
+					],
+				},
+				axis: { 
+					x : {
+						type: 'category',
+						categories: data['categories'].map(function(val) {
+							return val['label'];
+						}),
+					}
+				},
+				legend: {
+					position: 'right',
+				},
+				/* uncomment this to enable zoom, but comment subchart first */
+				/*
+				zoom: {
+					enabled: true,
+				},
+				*/
+				subchart: {
+					show: true
+				}
+			});
+		}
+	})
+})
+
+

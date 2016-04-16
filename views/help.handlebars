@@ -1,0 +1,246 @@
+<!-- vim: set ft=html ts=2 sw=2 expandtab : -->
+
+<!-- with a little help from http://www.sitepoint.com/understanding-bootstraps-affix-scrollspy-plugins/ -->
+
+<div class="jumbotron help">
+  <div class="container">
+    <h1>SPA Performance Analyzer</h1>
+    <h3><span class="fa fa-pencil"></span> Upload detailed Oracle Database AWR files for multiple snapshots.</h3>
+    <h3><span class="fa fa-pencil"></span> Keep snapshots for related databases and periods in separate Data Sets.</h3>
+    <h3><span class="fa fa-pencil"></span> Visualize most important database statistics.</h3>
+    <h3><span class="fa fa-pencil"></span> Search for and analyze impact of SQL statements.</h3>
+  </div>
+</div><!--end of .jumbotron-->
+
+<div class="container help">
+  <div class="row">
+
+    <div class="col-md-3 scrollspy">
+      <ul id="nav" class="nav hidden-xs hidden-sm" data-spy="affix">
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#setup">Setup</a>
+        <li><a href="#getting-started">Getting Started</a>
+          <ul class="nav">
+            <li><a href="#create-ds"><span class="fa fa-angle-double-right"></span>Create Data Set</a></li>
+            <li><a href="#upload-awr"><span class="fa fa-angle-double-right"></span>Upload AWR files</a></li>
+            <li><a href="#assign-awr"><span class="fa fa-angle-double-right"></span>Assign AWR files</a></li>
+            <li><a href="#recalc-ds"><span class="fa fa-angle-double-right"></span>Recalculate Data Set</a></li>
+            <li><a href="#view-charts"><span class="fa fa-angle-double-right"></span>View charts</a></li>
+            <li><a href="#sql-details"><span class="fa fa-angle-double-right"></span>Check SQL details</a></li>
+          </ul>
+        </li>
+        <li><a href="#user-interface">User interface</a>
+          <ul class="nav">
+            <li><a href="#ui-charts"><span class="fa fa-angle-double-right"></span>Charts</a></li>
+            <li><a href="#ui-tables"><span class="fa fa-angle-double-right"></span>Tables</a></li>
+            <li><a href="#ui-search"><span class="fa fa-angle-double-right"></span>Searching for SQL</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="col-md-9">
+      <section id="introduction">
+        <h2><span class="fa fa-edit"></span> Introduction</h2>
+        <p>The first thing to ask when dealing with Oracle database performance issues are the AWR reports.
+        When analyzing period longer than single snapshot, you can ask for a single report but you will not
+        get enough details. Or you can ask for separate report for each snapshot and you will have difficulties
+        merging information from multiple files.
+        </p>
+        <p>
+        SPA allowes you to get multiple detailed reports and use charts to easily spot trends and hot spots, while 
+        being able to drill into details when required.
+        </p>
+        <p>SPA is a web application that uses <a href="https://nodejs.org">Node JS</a> to serve dynamic content
+        and <a href="https://www.mongodb.org">MongoDB</a> NoSQL database to store data.
+        </p>
+      </section><!--end of #introduction-->
+
+      <section id=setup>
+        <h2><span class="fa fa-edit"></span> Setup</h2>
+        <p>To start SPA, you need following components installed:
+        </p>
+        <ul>
+          <li>
+            <p><span class="fa fa-database"></span> MongoDB database.</p>
+            <p>Make sure you can connect to Mongo server using net address and port, for example:</p>
+            <pre><code># mongo localhost:27017</code></pre>
+            <p>27017 is a default Mongo port number.</p>
+          </li>
+          <li>
+            <p><span class="fa fa-cloud-download"></span> Node JS. Check installation with: </p>
+            <pre><code># node --version
+v4.4.1</code></pre>
+          </li>
+          <li>
+            <p><span class="fa fa-gear"></span> npm (Node Packet Manager):</p>
+            <pre><code># npm --version
+1.4.21</code></pre>
+          </li>
+          </li>
+        </ul>
+        <p>Now, get SPA source code. In SPA main directory run npm to download all required dependencies with command:</p>
+        <pre><code># npm install</code></pre>
+        <p>By default Mongo database called <strong>spa</strong> is created on first 
+        application start. You can change database name (and connection details) or SPA listen port by editing
+        <code class="filename">config.js</code> file in SPA top directory.
+        </p>
+        <p>You are ready to start SPA with command:
+        </p>
+        <pre><code># node spa.js</code></pre>
+        <p>You should get:<p>
+        <pre><code>SPA server up at http://localhost:3300</code></pre>
+        <p>Point your browser (modern one, no clumsy old IE) to address printed.</p>
+      </section><!--end of #setup-->
+        
+
+      <section id=getting-started>
+        <h2><span class="fa fa-edit"></span> Getting started</h2>
+        <p>These are few simple steps to get you started with using SPA for analyzing data.
+        </p>
+        <section id=create-ds>
+          <h3>Create a new Data Set</h3>
+          <p>Data Set is a logical unit that groups related AWR files - e.g. for the same environment 
+          and the same period.
+          </p>
+          <p>Choose <kbd>Data Set</kbd> - <kbd>New</kbd> from top menu, enter name and description. 
+          You can change them later, each 
+          object has artificial ID assigned by Mongo database.
+          </p>
+        </section>
+        <section id=upload-awr>
+          <h3>Upload AWR files</h3>
+          <p>Choose <kbd>AWR</kbd> - <kbd>Upload</kbd> from top menu and upload AWR html reports. 
+          You may upload multiple files at once.
+          </p>
+          <p>For best 
+          results upload files from consequentive snapshots and with the same snapshot duration. 
+          You can upload files for multiple databases / instances
+          - they will be presented separately.
+          </p>
+        </section>
+        <section id=assign-awr>
+          <h3>Assign AWR files to Data Set</h3>
+          <p>Go to previously created Data Set (choose <kbd>Data Set</kbd> - <kbd>List</kbd> from top menu 
+          and click on Data Set id). 
+          </p>
+          <p>Select <kbd>AWR files</kbd> tab, you will see empty list of Assigned AWR files. Click on 
+          <kbd>Add AWR files to data set</kbd> to see list of available AWR files. Select files and 
+          click on <kbd>Add</kbd>. 
+          </p>
+          <p>Click <kbd>Done</kbd> when finished to see list of assigned AWR files.
+          </p>
+        </section>
+        <section id=recalc-ds>
+          <h3>Recalculate Data Set</h3>
+          <p>Go <kbd>Main</kbd> pane on Data Set screen and click <kbd>Recalculate</kbd>.
+          This will tigger calculation of data from AWR files assigned to the Data Set.
+          Recalculation may take few seconds, depending on the number of AWR files to go through.
+          </p>
+          <p>Refresh the browser page when done to make sure you see updated data.
+          </p>
+        </section>
+        <section id=view-charts>
+          <h3>View charts</h3>
+          <p>Go to <kbd>Hosts</kbd> pane on Data Set screen to see CPU usage for hosts captured
+          in Data Set.
+          </p>
+          <p>Switch to <kbd>Databases</kbd> pane to see charts for various database statistics.
+          Use select drop downs to change database, instance and chart type.
+          </p>
+        </section>
+        <section id=sql-details>
+          <h3>Check SQL details</h3>
+          <p>Choose some chart showing SQL statements (for example <i>SQL - Buffer Gets</i>).
+          Rigth click on SQL id at chart legend and choose <kbd>Show SQL details</kbd>
+          from context menu.
+          </p>
+          <p>You will get redirected to new tab with SQL text and summary of statement impact.
+          </p>
+          <p>You can also right click area on any database chart to go details of AWR file for corresponding
+          snapshot.
+          </p>
+        </section><!--end of #sql-details -->
+      </section><!-- end of #getting-started -->
+
+      <section id=user-interface>
+        <h2><span class="fa fa-edit"></span> User interface</h2>
+        <p>Many elements on the SPA screens are interactive and dynamic. At the same time you may use
+        full funcionality of your browser - history navigation, multiple tabs and windows.
+        </p>
+        <section id=ui-charts>
+          <h3>Charts</h3>
+          <p>Charts are created using <a href="http://c3js.org/">c3js</a> library, utilizing SVG 
+          for rendering.
+          So you need browser with SVG support (e.g. Chrome or Firefox).
+          </p>
+          <p>Charts can be zoomed using mouse scroll and panned. Hovering mouse over chart area 
+          will display detailed values of data. 
+          Context menu on database charts allow you to navigate to AWR report for corresponding
+          database and period.
+          </p>
+          <p>Clicking on data item description at chart's legend hides this item from chart. It may
+          be usefull to see data items with lower values in more details.
+          </p>
+          <p>SQL related charts allow you to go to SQL statement details using context menu on
+          chart legend's items.
+          </p>
+          <p>Colors on charts are based on hashed data item names. This means that the same item will
+          always have the same color. For example the same SQL will always get the same color
+          on any of the charts.
+          </p>
+        </section>
+        <section id=ui-tables>
+          <h3>Tables</h3>
+          <p>Tables can be sorted by any of the column by clicking on column header. Search
+          field filters rows containing searched text.
+          </p>
+          <p>Range of rows can be selected with mouse when holding <kbd>Shift</kbd>. Multiple
+          rows can be selected by clicking while holding <kbd>Ctrl</kbd> and <kbd>Shift</kbd>.
+          </p>
+        </section>
+        <section id=ui-search>
+          <h3>Searching for SQL</h3>
+          <p><kbd>SQL</kbd> page allows for dynamic search of SQL statements within selected Data Set and database.
+          2 first letters of SQL id or at least 7-letters long part of SQL text is required to trigger
+          search. First 10 matching SQL statements are displayed.
+          </p>
+        </section>
+      </section><!-- end of #user-interface -->
+
+     </div> <!-- end of content div -->
+  
+  </div><!--end of .row-->
+</div><!--end of .container-->
+
+<section class="footer help bg-info">
+  <div class="container">
+    <a id="about"></a>
+    <div class="row">
+      <h3 class="text-center">
+      SPA Performance Analyzer
+      </h3>
+      <p class="text-center">
+      Analyzer for Oracle database AWR reports.
+      </p>
+      <p class="text-center">
+      <span class="fa fa-copyright"></span> 2016 Paweł Pałucha <a>pawel.palucha@gmail.com</a> 
+      </p>
+      <p class="text-center">Version: 0.1 License: <a href="https://opensource.org/licenses/MIT">MIT</a>   
+      </p>
+    </div>
+    </div><!--end of .row-->
+  </div><!--end of .container-->
+</section>
+
+<script>
+$('body').attr('data-spy', 'scroll').attr('data-target', '.scrollspy');
+$('#nav').affix({
+    offset: {     
+      top: $('#nav').offset().top,
+      bottom: ($('.footer').outerHeight(true)) + 100
+    }
+});
+</script>
+
+

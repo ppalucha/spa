@@ -1,0 +1,41 @@
+{
+  "name": "spa",
+  "version": "0.1",
+  "description": "Super/Smart/Statistical Performance Analyzer",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "bootbox": "",
+    "bootstrap": "",
+    "bootstrap-list-filter": "^0.2.3",
+    "bootstrap-menu": "^1.0.11",
+    "c3": "",
+    "clipboard": "^1.5.10",
+    "datatables.net": "",
+    "datatables.net-bs": "",
+    "datatables.net-buttons": "",
+    "datatables.net-buttons-bs": "",
+    "datatables.net-select": "",
+    "datatables.net-select-bs": "",
+    "dateformat": "^1.0.12",
+    "express": "",
+    "express-handlebars": "",
+    "font-awesome": "^4.6.1",
+    "gridfs-stream": "^1.1.1",
+    "handlebars": "",
+    "highlightjs": "^8.7.0",
+    "htmlparser2": "",
+    "jquery": "",
+    "mongodb": "",
+    "morgan": "^1.7.0",
+    "multer": "",
+    "yargs": ""
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node spa.js"
+  },
+  "author": "Pawel Palucha",
+  "license": "MIT",
+  "readme": "README.md"
+}

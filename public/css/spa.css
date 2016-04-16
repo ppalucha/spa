@@ -1,0 +1,162 @@
+/* vim: set ts=2 sw=2 expandtab : */
+
+/*
+.gray-region rect {
+	fill: #ddd;
+}
+*/
+
+/*
+ * By default c3js uses "crispyedges" shape rendering, which looks terrible (Firefox at least).
+ */
+* {
+	shape-rendering: auto !important;
+}
+
+/*
+ * Grid lines - vertical and horizontal.
+ */
+.c3-grid line {
+	stroke: #bbb;
+	stroke-opacity: 0.3;
+	stroke-dasharray: none;
+	/*filter: blur(0.15px);*/
+}
+
+/*
+ * Focused vertical grid line - we make it wider.
+ */
+.c3-xgrid-focus line {
+	/*stroke: red;*/
+	stroke-width: 2px;
+	stroke-opacity: 0.3;
+	stroke-dasharray: none;
+}
+
+/*
+ * Graph area - we decrease opacity.
+ */
+.c3-chart-lines path.c3-shape {
+	opacity: 0.7;
+}
+
+/*
+ * Graph lines.
+ */
+.c3-chart-lines path.c3-line {
+	stroke-width: 0px; /* actually we disable it */
+
+	/* or we could make it wider, round and less opaque */
+	/*
+	stroke-width: 2px; 
+	stroke-linejoin: round;
+	stroke-opacity: 0.7;
+	*/
+
+	/* blur option */
+	/*filter: blur(0.2px);*/
+}
+
+/* removing top navigation round corners */
+.navbar-inverse {
+  border-radius: 0px;  
+}
+
+/* help */
+
+body {
+  position: relative;
+}
+
+
+.jumbotron.help {
+  border-radius: 0px;
+  margin-bottom: 0;
+}
+
+
+.help section {
+  padding: 20px 0;
+  /* borders between help sections */
+  border-bottom: 1px solid #c1e1ec;
+}
+
+.help section:last-child {
+  border-bottom: none;
+}
+
+.help .nav .active {
+  font-weight: bold;
+}
+
+.help .nav .nav {
+  display: none;
+}
+
+.help .nav .active .nav {
+  display: block;
+}
+
+.help .nav .nav a {
+  font-weight: normal;
+  font-size: .85em;
+}
+
+.help .nav .nav span {
+  margin: 0 5px 0 2px;
+}
+
+.help .nav .nav .active a,
+.help .nav .nav .active:hover a,
+.help .nav .nav .active:focus a {
+  font-weight: bold;
+  padding-left: 30px;
+  border-left: 5px solid #86c5da;
+}
+
+.help .nav .nav .active span,
+.help .nav .nav .active:hover span,
+.help .nav .nav .active:focus span {
+  display: none;
+}
+
+.help.footer {  
+  border-top: 1px solid #c1e1ec;
+  margin-top: 20px;
+  padding-top: 10px;
+}
+
+.help .affix-top {
+  position: relative;
+}
+
+.help .affix {
+  top: 20px;
+}
+
+.help .affix, 
+.help .affix-bottom {
+    width: 213px;
+}
+
+.help .affix-bottom {
+  position: absolute;
+}
+
+/* copy to clipboard button */
+.clipboard {
+  box-sizing: border-box; 
+  display: block; 
+  position: relative;
+}
+
+.btn-clipboard {
+  display: block; 
+  position: absolute; 
+  right: 0; 
+  top 0; 
+  box-sizing: border-box; 
+  padding: 4px 6px; 
+  border-radius: 0 4px
+}
+

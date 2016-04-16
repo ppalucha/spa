@@ -1,0 +1,24 @@
+<!-- vim: set ft=html ts=2 sw=2 expandtab : -->
+<h3>Upload AWR file</h3>
+
+<form action="/api/upload-awr" method=post id=uploadForm enctype=multipart/form-data> 
+
+  <div class="form-group">
+    <label for=awr>Select files</label>
+    <input type=file id=awr name=awr multiple>
+    <p class="help-block">Select one or more AWR files to load into the database.</p>
+  </div>
+
+  <button type=submit class="btn btn-primary" id=submit data-submit-text="Uploading, please wait..." autocomplete=off>Upload</button>
+
+</form>
+
+<script>
+$('#uploadForm').on('submit', function() {
+  $('#submit').button('submit');
+  $('#submit').addClass('disabled');
+});
+</script>
+
+
+
