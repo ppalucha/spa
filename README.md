@@ -18,3 +18,5 @@ a new empty database for you if necessarry.
 6. Start SPA: `node spa.js`. Hopefully you will get `SPA server up at http://localhost:3300`.
 
 7. Point your browser to address as printed above. Check *Help* menu for usage instructions.
+
+![SPA Screenshot](https://raw.githubusercontent.com/ppalucha/spa/master/screenshot.png)
