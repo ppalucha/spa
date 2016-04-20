@@ -27,6 +27,9 @@ var awr = require(__dirname + '/awr');
 var dataset = require(__dirname + '/dataset');
 var facts = require(__dirname + '/facts');
 
+// Load package.json meta information
+var pckg = require(__dirname + '/package.json')
+
 //MongoDB connection URL - mongodb://host:port/dbName
 var dbHost = 'mongodb://' + config.db.host + ':' + config.db.port + '/' + config.db.database;
 //DB Object
@@ -105,7 +108,6 @@ app.get("/", function(req, res){
 [ 
   'admin',
   'chart',
-  'help',
   'list-awr',
   'list-ds',
   'new-ds',
@@ -120,6 +122,10 @@ app.get("/", function(req, res){
 /*
  * renders with parameters
  */
+// help and about
+app.get('/help', function(req, res) {
+  res.render('help', { author: pckg.author, description: pckg.description, license: pckg.license, version: pckg.version });
+});
 
 // search and show AWR
 app.get('/search-awr', function(req, res) {
@@ -422,7 +428,7 @@ MongoClient.connect(dbHost, function(err, db){
       newDB(db);
     }
     app.listen(config.port, function(){
-      console.log('SPA server up at http://localhost:' + config.port);
+      console.log('SPA server ' + pckg.version + ' up at http://localhost:' + config.port);
     });
   });
 });
