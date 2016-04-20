@@ -1,0 +1,14 @@
+[Unit]
+Description=SPA VM start menu
+#After=dev-tty11.device systemd-user-sessions.service 
+After=sysinit.target systemd-user-sessions.service
+
+[Service]
+Type=idle
+ExecStart=/usr/local/spa/vm/spa_menu.sh 
+StandardInput=tty
+StandardOutput=tty
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
