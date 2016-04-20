@@ -136,7 +136,11 @@ function createParser(db, ret, callback) {
 	
 	// sanitize string
 	function clearStr(s) {
-		return s.replace(/(\n)|(\r)|(&[^;]{2,4};)/g, ' ').replace(/[ ]{2,}/g,' ').trim();
+		s = s.replace(/(\n)|(\r)|(&[^;]{2,4};)/g, ' ').replace(/[ ]{2,}/g,' ').trim();
+    sU = {
+      'D B Time (s)': 'DB Time (s)',
+    }
+    return sU[s] ? sU[s] : s;
 	}
 
 	// Pops closed tag from stack; process end of table or row.
