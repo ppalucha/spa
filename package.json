@@ -1,8 +1,7 @@
 {
   "name": "spa",
-  "version": "0.1.0",
-  "description": "Super/Smart/Statistical Performance Analyzer",
-  "main": "server.js",
+  "version": "0.1.1",
+  "description": "SPA Performance Analyzer",
   "dependencies": {
     "body-parser": "^1.15.0",
     "bootbox": "",
@@ -35,7 +34,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node spa.js"
   },
-  "author": "Pawel Palucha",
+  "author": "Paweł Pałucha",
   "license": "MIT",
   "readme": "README.md",
   "repository": {
