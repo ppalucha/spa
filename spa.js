@@ -22,10 +22,10 @@ var fs = require('fs');
 var path = require('path')
 
 // Internal app modules
-var config = require('./config')
-var awr = require('./awr');
-var dataset = require('./dataset');
-var facts = require('./facts');
+var config = require(__dirname + '/config')
+var awr = require(__dirname + '/awr');
+var dataset = require(__dirname + '/dataset');
+var facts = require(__dirname + '/facts');
 
 //MongoDB connection URL - mongodb://host:port/dbName
 var dbHost = 'mongodb://' + config.db.host + ':' + config.db.port + '/' + config.db.database;

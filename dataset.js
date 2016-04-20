@@ -3,7 +3,7 @@
  * @file Handling of data sets
  */
 var mongodb = require('mongodb');
-var awr = require('./awr');
+var awr = require(__dirname + '/awr');
 var assert = require('assert');
 
 /**
