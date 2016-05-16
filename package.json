@@ -17,6 +17,7 @@
     "datatables.net-select": "",
     "datatables.net-select-bs": "",
     "dateformat": "^1.0.12",
+    "entities": "^1.1.1",
     "express": "",
     "express-handlebars": "",
     "font-awesome": "^4.6.1",

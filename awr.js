@@ -4,6 +4,7 @@ var fs = require('fs');
 var mongodb = require('mongodb');
 var grid = require('gridfs-stream');
 var assert = require('assert');
+var entities = require('entities')
 
 /**
  * Inserts parsed AWR document into database.
@@ -135,8 +136,13 @@ function createParser(db, ret, callback) {
 	}
 	
 	// sanitize string
-	function clearStr(s) {
-		s = s.replace(/(\n)|(\r)|(&[^;]{2,4};)/g, ' ').replace(/[ ]{2,}/g,' ').trim();
+	function clearStr(s, keep_entities) {
+    if (keep_entities) {
+		  s = entities.decodeHTML(s.replace(/(\n)|(\r)/g, ' ').replace(/[ ]{2,}/g,' ').trim());
+    } else {
+		  s = s.replace(/(\n)|(\r)|(&[^;]{2,4};)/g, ' ').replace(/[ ]{2,}/g,' ').trim();
+    }
+		//s = s.replace(/(\n)|(\r)|(&[^;]{2,4};)/g, ' ').replace(/[ ]{2,}/g,' ').trim();
     sU = {
       'D B Time (s)': 'DB Time (s)',
     }
@@ -204,9 +210,9 @@ function createParser(db, ret, callback) {
 				} else {
 					if (row[header[column]]) {
 						/* append - we process another chunk of the same text */
-						row[header[column]] += clearStr(str);
+						row[header[column]] += clearStr(str, true);
 					} else {
-						row[header[column]] = clearStr(str);
+						row[header[column]] = clearStr(str, true);
 					}
 				}
 				break;
