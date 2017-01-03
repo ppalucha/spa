@@ -16,5 +16,5 @@ SPA application should be available at port 3300.
 If you want to have access to MongoDB, uncomment 'ports' directive in docker-compose.yaml and
 rebuild image with:
 
-** docker-compose up --build**
+**docker-compose up --build**
 
