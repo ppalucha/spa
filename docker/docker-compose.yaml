@@ -1,0 +1,12 @@
+db:
+  image: mongo
+# Uncomment following 2 lines to have MongoDB port forwarded to your host.
+#  ports:
+#    - "27017:27017"
+web:
+  build: .
+  command: node spa.js
+  ports:
+    - "3300:3300"
+  links:
+    - db

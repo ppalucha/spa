@@ -2,6 +2,8 @@
 
 Tool to analyze multiple Oracle Database AWR reports - upload them and admire beautiful charts.
 
+**New - check docker directory for quick and easy setup with Docker!**
+
 ### Quick Setup
 
 1. Install Mongo DB, Node JS and npm.
