@@ -13,12 +13,17 @@ var entities = require('entities')
  * @param {doneCallback} callback - Called when done.
  */
 function insertParsedAWR(db, data, callback) {
-	data.start = new Date(Date.parse(data['snapshot information'].data[0]['Snap Time']));
-  var coll = db.collection('awr');
-  var ret = coll.insertOne(data, function(err, result) {
-    if (err) throw err;
+	try {
+		data.start = new Date(Date.parse(data['snapshot information'].data[0]['Snap Time']));
+	} catch( e ) {
+		console.error(e.stack);
+		throw e;
+	}
+	var coll = db.collection('awr');
+	var ret = coll.insertOne(data, function(err, result) {
+		if (err) throw err;
 		callback();
-  });
+	});
 }
 
 /**
@@ -47,7 +52,12 @@ function parse(db, file, original_fname, callback) {
 		/* now parse file */
 		ret.gfs_id = gfs_file._id;
 		var parser = createParser(db, ret, function(result) {
-			insertParsedAWR(db, result, callback);
+			try {
+				insertParsedAWR(db, result, callback);
+			} catch (e) {
+				console.error("Failed to parse AWR file: ", original_fname);
+				callback();
+			}
 		});
 		
 		gfs_readable = gfs.createReadStream({ _id: ret.gfs_id });
