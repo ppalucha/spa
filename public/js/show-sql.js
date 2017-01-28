@@ -1,13 +1,14 @@
 /* vim: set ts=2 sw=2 expandtab : */
 
 var cur;
+var db_instances;
 
 function loadInstances(selCurrent) {
   var select = $('#inst-sel');
   select.change();
   select.empty();
   if ($('#db-sel').val()) db_instances[$('#db-sel').val()].forEach(function(opt) {
-    $('<option>').val(opt).text(opt).select(opt === cur.inst).appendTo(select);
+    $('<option>').val(opt).text(opt).prop('selected', opt === cur.inst).appendTo(select);
   });
   if (cur.inst) {
     select.val(cur.inst);
@@ -31,7 +32,9 @@ function loadDatabases() {
         select.empty();
         db_instances = ret;
         Object.keys(ret).sort().forEach(function(opt) {
-          $('<option>').val(opt).text(opt).select(opt === cur.db).appendTo(select);
+		console.log("OPTION ", opt);
+	      console.log("CUR DB", cur.db);
+          $('<option>').val(opt).text(opt).prop('selected', opt === cur.db).appendTo(select);
         });
         if (cur.db) {
           select.val(cur.db);
@@ -249,7 +252,6 @@ $(document).ready(function() {
     'sql': $('#sql-id').val(),
   };
 
-  var db_instances;
 
   loadDatasets();
 
